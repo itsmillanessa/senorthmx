@@ -1,21 +1,54 @@
-LABORATORIO AUTOMATIZADO DE FORTIEDR
+# 📦 SENORTHMX – Laboratorios Automatizados con CloudFormation
 
-Prerequisitos: Acceso a AMI preconfigurada, solicitarla con @itsmillanessa
+Repositorio público de plantillas e infraestructura como código (IaC) para laboratorios de pruebas con tecnologías Fortinet.  
+Todos los labs están diseñados para ser desplegados automáticamente en AWS usando **AWS CloudFormation**.
 
-fortiedr-lab.yaml
-Este template de CloudFormation lanza un entorno completo para pruebas de FortiEDR sobre Windows con:
+---
 
-VPC y subred pública
+## 📁 Estructura del Repositorio
 
-EC2 con tu AMI personalizada
+Cada carpeta representa un laboratorio independiente y contiene:
 
-Security Group con acceso RDP (puerto 3389)
+- Archivos `.yaml` de CloudFormation
+- Un `README.md` con instrucciones de uso por lab
+- Requisitos previos (como AMIs o configuraciones específicas)
 
-🚀 Uso
-Ve a AWS CloudFormation
+---
 
-Clic en “Crear pila” > “Con recursos nuevos (estándar)”
+## 🧪 Laboratorios disponibles
 
-Carga el archivo desde el bucket de S3: https://se-northmx.s3.us-west-1.amazonaws.com/Laboratorios/cloudformation/EDR/fortiedr-lab.yaml
+| Carpeta        | Descripción rápida                                                   |
+|----------------|----------------------------------------------------------------------|
+| `fortiedr/`    | Laboratorio con una AMI preconfigurada de FortiEDR sobre Windows     |
+| `...`          | *(Aquí podrás agregar más laboratorios conforme se publiquen)*       |
 
-Da clic en “Siguiente” → “Siguiente” → Acepta permisos IAM → Crear pila
+---
+
+## 🚀 ¿Cómo usar los labs?
+
+1. Entra a la carpeta del lab deseado
+2. Lee el `README.md` con las instrucciones específicas
+3. Sube el archivo `.yaml` a **AWS CloudFormation**
+4. Sigue los pasos indicados para lanzar tu entorno de pruebas
+
+---
+
+## 🙋‍♂️ ¿Necesitas acceso a las AMIs?
+
+Algunos laboratorios requieren una AMI preconfigurada.  
+Solicita acceso o IDs directamente a: `@itsmillanessa`
+
+---
+
+## ☁️ Requisitos generales
+
+- Cuenta de AWS con permisos para usar CloudFormation, EC2, VPC
+- Par de llaves EC2 (`.pem`) para conexión
+- Conocimiento básico de redes y acceso remoto (RDP/SSH)
+
+---
+
+## 📫 Contribuciones
+
+Este repositorio es de uso compartido para el equipo.  
+Puedes contribuir con nuevos labs, mejoras o documentación.
