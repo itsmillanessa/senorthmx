@@ -33,7 +33,7 @@ Resources:
       VpcId: !Ref VPC
       CidrBlock: 10.100.1.0/24
       MapPublicIpOnLaunch: true
-      AvailabilityZone: !Select [0, !GetAZs !Ref "AWS::Region"]
+      AvailabilityZone: us-east-1a
 
   RouteTable:
     Type: AWS::EC2::RouteTable
@@ -63,7 +63,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 3389
           ToPort: 3389
-          CidrIp: 0.0.0.0/0  # ⚠️ Abierto a internet para pruebas, restringe después
+          CidrIp: 0.0.0.0/0
         - IpProtocol: icmp
           FromPort: -1
           ToPort: -1
@@ -76,7 +76,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t3.large
-      ImageId: ami-030bd18da0ddaffed  # ← AMI con FortiEDR preinstalado
+      ImageId: ami-030bd18da0ddaffed
       KeyName: !Ref KeyPairName
       SubnetId: !Ref PublicSubnet
       SecurityGroupIds:
