@@ -76,7 +76,7 @@ Resources:
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t3.large
-      ImageId: ami-030bd18da0ddaffed
+      ImageId: ami-030bd18da0ddaffed  # ← AMI con FortiEDR preinstalado
       KeyName: !Ref KeyPairName
       SubnetId: !Ref PublicSubnet
       SecurityGroupIds:
